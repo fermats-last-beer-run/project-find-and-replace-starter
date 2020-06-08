@@ -21,7 +21,19 @@ function getCellElements (currentRowElement) {
 
 
 // YOUR CODE GOES HERE
+replaceAllButton.addEventListener("click", () => {
+    let findValue = findInput.value
+    let replaceValue = replaceInput.value
 
+    rowElements.forEach(row =>{
+        let currentColumn = getCellElements(row)
+        currentColumn.forEach(cell => {
+            if (cell.innerHTML.includes(findValue)) {
+                cell.innerHTML = cell.innerHTML.replace(findValue, replaceValue)
+            }
+        })
+    })
+})
 
 // One last thing: dedicate very careful attention to using variables and
 // naming them accurately.
